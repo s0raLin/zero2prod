@@ -1,0 +1,20 @@
+[package]
+name = "zero2prod"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+actix-web = "4.11.0"
+tokio ={ version = "1.47.1", features = ["macros", "rt-multi-thread"]}
+
+# 开发依赖项，仅在运行测试或示例时使用
+# 它们没有被包含在最终的二进制文件中
+[dev-dependencies]
+reqwest = "0.12.23"
+
+[[bin]]
+path = "src/main.rs"
+name = "zero2prod"
