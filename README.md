@@ -101,7 +101,7 @@ create table subscriptions(
 1. 克隆项目到本地：
 ```bash
 git clone <项目地址>
-cd RustWeb
+cd zero2prod
 ```
 
 2. 配置数据库连接信息：
