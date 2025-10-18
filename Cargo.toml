@@ -9,6 +9,26 @@ path = "src/lib.rs"
 [dependencies]
 actix-web = "4.11.0"
 tokio ={ version = "1.47.1", features = ["macros", "rt-multi-thread"]}
+serde ={ version = "1.0.228", features = ["derive"] }
+config = "0.15.18"
+uuid = { version = "1.18.1", features = ["v4"] }
+chrono = "0.4.42"
+
+
+# HTML解析
+scraper = "0.24.0"
+[dependencies.sqlx]
+version = "0.8.6"
+default-features = false
+features = [
+    "runtime-tokio-rustls", # 使用tokio作为运行时, rustls作为tls后端
+    "macros",               # 允许我们访问sqlx::query!和sqlx::query_as!
+    "postgres",             # postgres 解锁了postgres的特定功能(如非标准sql类型)
+    "uuid",                 # uuid 添加了将sql uuid映射到uuid包中的Uuid类型的支持。需要用它处理id列
+    "chrono",               # 添加了将sql timestamptz映射到chrono包中的DateTime<T>类型的支持。用它处理subscribed_at列
+    "migrate",              # 允许访问在sql-cli内部使用的函数来管理迁移
+]
+
 
 # 开发依赖项，仅在运行测试或示例时使用
 # 它们没有被包含在最终的二进制文件中
