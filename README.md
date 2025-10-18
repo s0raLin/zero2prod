@@ -22,7 +22,7 @@
 ## 项目结构
 
 ```
-hello/
+zero2prod/
 ├── src/
 │   ├── main.rs          # 应用程序入口
 │   ├── lib.rs           # 应用程序核心逻辑
@@ -105,11 +105,11 @@ cd zero2prod
 ```
 
 2. 配置数据库连接信息：
-编辑 `hello/configuration.yaml` 文件，设置正确的数据库连接参数。
+编辑 `zero2prod/configuration.yaml` 文件，设置正确的数据库连接参数。
 
 3. 运行应用程序：
 ```bash
-cargo run --package hello
+cargo run --package zero2prod
 ```
 
 应用程序将在 `http://127.0.0.1:8080` 上启动。
@@ -119,7 +119,7 @@ cargo run --package hello
 项目包含集成测试，可以通过以下命令运行：
 
 ```bash
-cargo test --package hello
+cargo test --package zero2prod
 ```
 
 测试会自动创建临时数据库并运行迁移脚本，确保测试环境的独立性。
